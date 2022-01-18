@@ -18,7 +18,7 @@ def first_function_execute(**context):
 
 def second_function_execute(**context):
     instance = context.get("ti").xcom_pull(key="mykey")
-    data = [{"name":"Soumil","title":"Full Stack Software Engineer"}, { "name":"Nitin","title":"Full Stack Software Engineer"},]
+    data = [{"name":"Ananya","title":"Data Scientist"}, { "name":"Stitipragyan","title":"Full Stack Software Engineer"},]
     df = pd.DataFrame(data=data)
     print('@'*66)
     print(df.head())
@@ -34,7 +34,7 @@ with DAG(
             "owner": "airflow",
             "retries": 1,
             "retry_delay": timedelta(minutes=5),
-            "start_date": datetime(2021, 1, 1),
+            "start_date": datetime(2022, 1, 1),
         },
         catchup=False) as f:
 
